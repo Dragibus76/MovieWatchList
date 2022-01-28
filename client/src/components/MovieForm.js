@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Card from "./Card";
+import MovieCard from "./MovieCard";
 
-const Form = () => {
+
+
+const MovieForm = () => {
   const [moviesData, setMoviesData] = useState([]);
   const [search, setSearch] = useState("code");
   const [sortGoodBad, setSortGoodBad] = useState(null);
@@ -48,6 +50,7 @@ const Form = () => {
       <div className="result">
         {moviesData
           .slice(0, 12)
+          // eslint-disable-next-line array-callback-return
           .sort((a, b) => {
             if (sortGoodBad === "goodToBad") {
               return b.vote_average - a.vote_average;
@@ -56,11 +59,11 @@ const Form = () => {
             }
           })
           .map((movie) => (
-            <Card key={movie.id} movie={movie} />
+            <MovieCard key={movie.id} movie={movie} /> 
           ))}
       </div>
     </div>
   );
 };
 
-export default Form;
+export default MovieForm;

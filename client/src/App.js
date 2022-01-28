@@ -1,15 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import UserList from './pages/UserList';
 import ErrorPage from './pages/ErrorPage';
+import WatchList from './pages/WatchList';
+import MovieSearch from './pages/MovieSearch';
+import Home from './pages/Home';
+import TvSearch from './pages/TvSearch';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/coup-de-coeur" element={<UserList/>}/>
+      <Route path="/" element={<Home/>}/>
+        <Route path="/films" element={<MovieSearch/>}/>
+        <Route path="/series" element={<TvSearch/>}/>
+        <Route path="/watchlist" element={<WatchList/>}/>
         <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </BrowserRouter>

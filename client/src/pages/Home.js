@@ -1,12 +1,11 @@
 import React from 'react';
-import Form from '../components/Form';
 import Header from '../components/Header';
 
 const Home = () => {
     return (
-        <div className='home-page'>
+        <div>
             <Header/>
-            <Form/>
+            <h1>Home Page</h1>
         </div>
     );
 };

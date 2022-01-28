@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ movie }) => {
+const MovieCard = ({ movie }) => {
   const dateFormater = (date) => {
     let [yy, mm, dd] = date.split("-");
     return [dd, mm, yy].join("/");
@@ -88,6 +88,7 @@ const Card = ({ movie }) => {
   const deleteStorage = () => {
     let storedData = window.localStorage.movies.split(",");
 
+    // eslint-disable-next-line eqeqeq
     let newData = storedData.filter((id) => id != movie.id);
 
     window.localStorage.movies = newData;
@@ -142,4 +143,4 @@ const Card = ({ movie }) => {
   );
 };
 
-export default Card;
+export default MovieCard;
